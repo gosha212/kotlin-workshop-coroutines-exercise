@@ -1,6 +1,6 @@
 package com.wix
 
-import kotlinx.coroutines.asCoroutineDispatcher
+import kotlinx.coroutines.*
 import java.util.concurrent.Executors
 
 private val networkDispatcher = Executors.newFixedThreadPool(3) {

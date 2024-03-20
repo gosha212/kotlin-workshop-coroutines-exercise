@@ -21,15 +21,11 @@ fun main() {
 
     // 2. Execute 50 network request on network pool (executeNetworkRequest)
 
-    // 3. Cancel all network request after 500 ms
+    // 3. Sum the successful responses and insert the result to database on database thread (addDataToDb).
 
-    // 4. Execute 50 failing network request on network pool (executeNetworkRequestWithError)
+    // 4. Set progress visibility to false on ui thread (setProgressVisibility)
 
-    // 5. Sum the successful responses and insert the result to database on database thread (addDataToDb).
-
-    // 6. Set progress visibility to false on ui thread (setProgressVisibility)
-
-    // 7. Print the data that was returned from the addToDb function on the ui thread (printData)
+    // 5. Print the data that was returned from the addToDb function on the ui thread (printData)
 }
 
 
