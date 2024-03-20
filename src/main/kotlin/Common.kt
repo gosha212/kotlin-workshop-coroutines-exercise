@@ -61,10 +61,10 @@ suspend fun executeNetworkRequestWithError(): Int {
     log("Executing network request")
     assertNetworkThread()
     delay(1000)
-    if (Random.nextBoolean()) {
-        throw IllegalStateException("Network request failed")
-    }
     val result = atomicInteger.incrementAndGet()
+    if (result % 3 == 0){
+        throw IllegalStateException("Network request failed $result")
+    }
     log("Network request executed. Result: $result")
     return result
 }
