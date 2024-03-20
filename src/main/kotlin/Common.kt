@@ -56,3 +56,15 @@ suspend fun executeNetworkRequest(): Int {
     log("Network request executed. Result: $result")
     return result
 }
+
+suspend fun executeNetworkRequestWithError(): Int {
+    log("Executing network request")
+    assertNetworkThread()
+    delay(1000)
+    if (Random.nextBoolean()) {
+        throw IllegalStateException("Network request failed")
+    }
+    val result = atomicInteger.incrementAndGet()
+    log("Network request executed. Result: $result")
+    return result
+}
